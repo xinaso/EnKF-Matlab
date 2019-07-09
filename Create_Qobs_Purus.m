@@ -66,7 +66,7 @@ formatSpec='%6i%6i%6i%16.6f\n';
 for i=1:length(code)
     namefile=['OBS_' num2str(catchment(i)) '_' num2str(code(i)) '.txt'];
     FileID=fopen(['.\Observation\' namefile],'w');
-    for j=1:lon
+    for j=1:length(discharge)
         fprintf(FileID,formatSpec,date(j,1),date(j,2),date(j,3),discharge(j,i));
     end
 fclose(FileID);
